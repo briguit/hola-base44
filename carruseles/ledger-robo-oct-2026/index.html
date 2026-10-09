@@ -1,0 +1,88 @@
+<title>Carrusel Ledger Women Biz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: brand-dark gallery — header, 2-col grid of 4:5 slides (1 col on phone), caption panel */
+  :root {
+    --bg: #080614; --panel: #141024; --line: rgba(255,255,255,.12);
+    --fg: #f3eefb; --muted: #b9b1cc; --pink: #e14099; --violet: #8f66ff;
+    --display: "Playfair Display", Georgia, serif; --body: "Inter", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  body {
+    background: radial-gradient(900px 600px at 0% 100%, rgba(225,64,153,.22), transparent 60%),
+                radial-gradient(800px 500px at 100% 0%, rgba(94,23,235,.25), transparent 60%), var(--bg);
+    color: var(--fg); font-family: var(--body); padding: 0 20px; padding-block: 40px 64px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+  header { display: flex; flex-direction: column; gap: 10px; }
+  .eyebrow { font-weight: 800; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--violet); }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 5vw, 52px); line-height: 1.08; text-wrap: balance; margin: 0; }
+  h1 em { font-style: italic; font-weight: 700; color: var(--pink); }
+  .meta { color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 70ch; margin: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 18px; }
+  figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  figure img { width: 100%; aspect-ratio: 4 / 5; border-radius: 12px; border: 1px solid var(--line); display: block; background: #000; }
+  figcaption { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .caption { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .caption-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .caption h2 { font-family: var(--display); font-size: 26px; margin: 0; }
+  pre { white-space: pre-wrap; font-family: var(--body); font-size: 15px; line-height: 1.6; margin: 0; color: var(--fg); }
+  button { font: 800 13px var(--body); letter-spacing: 2px; text-transform: uppercase; background: var(--pink); color: #fff; border: 0; border-radius: 999px; padding: 12px 20px; cursor: pointer; }
+  button:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+  .tip { font-size: 13px; color: var(--muted); margin: 0; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Women Biz · Instagram 4:5 · 8 láminas</div>
+    <h1>Robo a usuarios de Ledger: <em>carrusel listo</em></h1>
+    <p class="meta">1080 × 1350 px. Datos al 9 oct 2026 (CoinDesk, Bloomberg, The Coin Republic). El caso está en desarrollo: revisa las cifras antes de publicar si pasa más de un día.</p>
+  </header>
+
+  <section class="grid" aria-label="Láminas del carrusel">
+    <figure><img src="ledger-01.png" alt="Portada: Compraron una Ledger para proteger sus cripto. Les vaciaron la wallet."><figcaption>01 · Portada</figcaption></figure>
+    <figure><img src="ledger-02.png" alt="US$86M drenados de wallets Ledger en Bitcoin, Ethereum y Tron."><figcaption>02 · Qué pasó</figcaption></figure>
+    <figure><img src="ledger-03.png" alt="No fue en la tienda oficial. Fue un revendedor: CryptoBilis."><figcaption>03 · El hilo común</figcaption></figure>
+    <figure><img src="ledger-04.png" alt="La versión oficial de Ledger."><figcaption>04 · Qué dice Ledger</figcaption></figure>
+    <figure><img src="ledger-05.png" alt="¿Hackeo o trampa? Cadena de suministro o phishing."><figcaption>05 · Hipótesis</figcaption></figure>
+    <figure><img src="ledger-06.png" alt="¿Compraste a CryptoBilis en los últimos 90 días?"><figcaption>06 · Haz esto hoy</figcaption></figure>
+    <figure><img src="ledger-07.png" alt="Checklist: tu wallet es tan segura como el camino que hizo hasta tus manos."><figcaption>07 · Checklist</figcaption></figure>
+    <figure><img src="ledger-08.png" alt="En cripto, tu seguridad también se aprende."><figcaption>08 · Cierre</figcaption></figure>
+  </section>
+
+  <section class="caption">
+    <div class="caption-head">
+      <h2>Caption</h2>
+      <button id="copy" type="button">Copiar caption</button>
+    </div>
+    <pre id="caption-text">Compraron una hardware wallet para dormir tranquilas… y les vaciaron la cuenta.
+
+Desde el 9 de octubre se reportan más de US$86 millones drenados de wallets Ledger en Bitcoin, Ethereum y Tron. El hilo común: los dispositivos se compraron a un revendedor del sudeste asiático, no a la tienda oficial.
+
+Todavía no hay causa confirmada (¿cadena de suministro o phishing?), pero la lección ya está clara: tu wallet es tan segura como el camino que hizo hasta tus manos.
+
+En el carrusel te dejamos:
+→ Qué pasó y qué dice Ledger
+→ Qué hacer si compraste a CryptoBilis
+→ El checklist para que no te pase a ti
+
+Guárdalo y envíaselo a esa amiga que tiene cripto 🤍
+
+Contenido educativo, no es asesoría financiera. Caso en desarrollo.
+
+#WomenInFinance #Cripto #Bitcoin #Ethereum #Ledger #SeguridadCripto #Blockchain #FinanzasPersonales #MujeresQueInvierten #WomenBiz</pre>
+    <p class="tip">Para guardar las láminas: mantén presionada cada imagen (móvil) o clic derecho → Guardar imagen.</p>
+  </section>
+</div>
+
+<script>
+  const btn = document.getElementById('copy');
+  btn.addEventListener('click', () => {
+    const text = document.getElementById('caption-text').textContent;
+    const done = () => { btn.textContent = 'Copiado'; setTimeout(() => btn.textContent = 'Copiar caption', 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('caption-text')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Texto seleccionado'; };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+</script>

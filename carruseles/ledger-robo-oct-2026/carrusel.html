@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Carrusel Ledger · Women Biz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080614;
+    --violet: #5e17eb;
+    --violet-soft: #8f66ff;
+    --pink: #e14099;
+    --pink-hot: #f0307a;
+    --pink-light: #f4a4c2;
+    --white: #ffffff;
+    --text: #f3eefb;
+    --muted: #b9b1cc;
+    --line: rgba(255,255,255,.14);
+    --card: rgba(255,255,255,.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; font-family: "Inter", Arial, sans-serif; color: var(--text); }
+  .slide {
+    position: relative; width: 1080px; height: 1350px; overflow: hidden;
+    background:
+      radial-gradient(900px 700px at -8% 108%, rgba(225,64,153,.55), transparent 62%),
+      radial-gradient(800px 600px at 108% -6%, rgba(94,23,235,.42), transparent 60%),
+      var(--bg);
+    padding: 88px 84px 0;
+    display: flex; flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .slide.alt {
+    background:
+      radial-gradient(900px 700px at 108% 108%, rgba(225,64,153,.5), transparent 62%),
+      radial-gradient(800px 640px at -8% -6%, rgba(94,23,235,.45), transparent 60%),
+      var(--bg);
+  }
+  .slide.pink {
+    background:
+      radial-gradient(900px 800px at 0% 100%, #f0307a, transparent 70%),
+      radial-gradient(900px 800px at 100% 0%, #5e17eb, transparent 70%),
+      #a1206a;
+  }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .logo { width: 104px; height: auto; display: block; }
+  .eyebrow {
+    font-weight: 800; font-size: 22px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--violet-soft); padding-top: 14px;
+  }
+  .slide.pink .eyebrow { color: #fff; opacity: .9; }
+  .serif { font-family: "Playfair Display", Georgia, serif; }
+  h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 800; color: var(--white); letter-spacing: -1px; }
+  h1 { font-size: 104px; line-height: 1.02; }
+  h2 { font-size: 78px; line-height: 1.06; }
+  em { font-style: italic; font-weight: 700; }
+  .pink-t { color: var(--pink); }
+  .hot-t { color: var(--pink-hot); }
+  .light-t { color: var(--pink-light); }
+  .lead { font-size: 34px; line-height: 1.45; color: var(--muted); font-weight: 500; }
+  .lead b { color: var(--white); font-weight: 700; }
+  .body { font-size: 30px; line-height: 1.5; color: var(--muted); }
+  .body b { color: var(--white); }
+  .top + * { margin-top: auto !important; }
+  .footer {
+    margin-top: auto; padding: 64px 0 64px; display: flex; justify-content: space-between; align-items: center;
+    font-weight: 700; font-size: 22px; letter-spacing: 1.5px; color: rgba(255,255,255,.8);
+  }
+  .count { font-weight: 800; letter-spacing: 3px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 12px; padding: 14px 26px; border-radius: 999px;
+    border: 2px solid rgba(244,164,194,.5); color: var(--pink-light);
+    font-weight: 800; font-size: 22px; letter-spacing: 3px; text-transform: uppercase;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--pink-hot); box-shadow: 0 0 14px var(--pink-hot); }
+  .rule { display: flex; align-items: center; gap: 22px; font-weight: 800; font-size: 26px; letter-spacing: 5px; color: #fff; text-transform: uppercase; }
+  .rule::before, .rule::after { content: ""; width: 70px; height: 2px; background: var(--pink-light); opacity: .7; }
+  .list { list-style: none; display: flex; flex-direction: column; gap: 22px; }
+  .list li {
+    display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: center;
+    padding: 26px 30px; border-radius: 22px; background: var(--card); border: 1px solid var(--line);
+    font-size: 30px; line-height: 1.38; color: var(--text);
+  }
+  .list li .n {
+    width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--pink); color: #fff; font-weight: 800; font-size: 26px;
+  }
+  .list li .n.v { background: var(--violet); }
+  .list li b { color: #fff; }
+  .swipe { font-weight: 800; font-size: 26px; letter-spacing: 3px; text-transform: uppercase; color: #fff; display: flex; align-items: center; gap: 14px; }
+  .swipe span { color: var(--pink); font-size: 40px; letter-spacing: 0; }
+  .big-num { font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: 236px; line-height: .9; letter-spacing: -6px; padding-bottom: 10px;
+    background: linear-gradient(100deg, #f4a4c2 0%, #e14099 55%, #f0307a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .card { border-radius: 26px; padding: 40px 42px; background: var(--card); border: 1px solid var(--line); }
+  .card .k { font-weight: 800; font-size: 22px; letter-spacing: 4px; text-transform: uppercase; color: var(--pink-light); margin-bottom: 14px; }
+  .card h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 800; font-size: 48px; line-height: 1.1; color: #fff; margin-bottom: 14px; }
+  .card p { font-size: 29px; line-height: 1.45; color: var(--muted); }
+  .note { font-size: 24px; line-height: 1.5; color: rgba(255,255,255,.62); }
+  .warn { border-left: 0; border-radius: 22px; padding: 30px 34px; background: rgba(225,64,153,.14); border: 1px solid rgba(225,64,153,.45); font-size: 30px; line-height: 1.45; color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- 01 · PORTADA -->
+<section class="slide" id="s1">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">Alerta cripto · 9 oct 2026</div>
+  </div>
+  <div style="margin-top: 150px;">
+    <div class="pill"><span class="dot"></span>+US$86M drenados</div>
+  </div>
+  <h1 style="margin-top: 44px;">Compraron una Ledger para <em class="light-t">proteger</em> sus cripto.</h1>
+  <h1 class="pink-t" style="margin-top: 26px;">Les vaciaron la wallet.</h1>
+  <p class="lead" style="margin-top: 46px;">Lo que se sabe, lo que no y cómo cuidar tu dinero.</p>
+  <div class="footer">
+    <div class="swipe">Desliza <span>→</span></div>
+    <div class="count">01 / 08</div>
+  </div>
+</section>
+
+<!-- 02 · QUÉ PASÓ -->
+<section class="slide alt" id="s2">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">01 — Qué pasó</div>
+  </div>
+  <div style="margin-top: 150px;" class="big-num">US$86M</div>
+  <h2 style="margin-top: 40px; font-size: 64px;">drenados de wallets Ledger en <em class="pink-t">Bitcoin, Ethereum y Tron.</em></h2>
+  <p class="body" style="margin-top: 44px; max-width: 880px;">Lo detectó el investigador on-chain <b>Specter</b>. Algunas estimaciones ya hablan de <b>casi US$100M</b>.</p>
+  <p class="note" style="margin-top: 30px;">Ledger todavía no confirma la cifra.</p>
+  <div class="footer">
+    <div>www.hiwomenbiz.com</div>
+    <div class="count">02 / 08</div>
+  </div>
+</section>
+
+<!-- 03 · EL HILO COMÚN -->
+<section class="slide" id="s3">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">02 — El hilo común</div>
+  </div>
+  <h2 style="margin-top: 150px;">No fue en la tienda oficial. Fue un <em class="pink-t">revendedor.</em></h2>
+  <p class="lead" style="margin-top: 50px;">Los reportes apuntan a personas que compraron su dispositivo a <b>CryptoBilis</b>, un revendedor que opera en:</p>
+  <div style="display:flex; gap: 18px; margin-top: 40px; flex-wrap: wrap;">
+    <div class="pill" style="color:#fff; border-color: rgba(255,255,255,.35);">Indonesia</div>
+    <div class="pill" style="color:#fff; border-color: rgba(255,255,255,.35);">Malasia</div>
+    <div class="pill" style="color:#fff; border-color: rgba(255,255,255,.35);">Filipinas</div>
+  </div>
+  <p class="body" style="margin-top: 56px; max-width: 880px;">El chip puede ser seguro. El problema es <b>todo lo que pasa antes</b> de que llegue a tus manos.</p>
+  <div class="footer">
+    <div>www.hiwomenbiz.com</div>
+    <div class="count">03 / 08</div>
+  </div>
+</section>
+
+<!-- 04 · QUÉ DICE LEDGER -->
+<section class="slide alt" id="s4">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">03 — Qué dice Ledger</div>
+  </div>
+  <h2 style="margin-top: 130px;">La versión <em class="pink-t">oficial.</em></h2>
+  <ul class="list" style="margin-top: 54px;">
+    <li><span class="n">✓</span><span>Pidió a CryptoBilis <b>pausar ventas y envíos.</b></span></li>
+    <li><span class="n">✓</span><span><b>Sin reportes</b> de equipos comprados directo a Ledger.</span></li>
+    <li><span class="n">✓</span><span>Dice que <b>sus sistemas no están comprometidos.</b></span></li>
+    <li><span class="n v">?</span><span>Aún <b>no confirma la causa</b> ni el monto total.</span></li>
+  </ul>
+  <div class="footer">
+    <div>www.hiwomenbiz.com</div>
+    <div class="count">04 / 08</div>
+  </div>
+</section>
+
+<!-- 05 · HIPÓTESIS -->
+<section class="slide" id="s5">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">04 — Las hipótesis</div>
+  </div>
+  <h2 style="margin-top: 120px;">¿Hackeo o <em class="pink-t">trampa?</em></h2>
+  <div class="card" style="margin-top: 50px;">
+    <div class="k">Hipótesis 01</div>
+    <h3>Cadena de suministro</h3>
+    <p>Dispositivos manipulados antes de llegar a quien los compró.</p>
+  </div>
+  <div class="card" style="margin-top: 24px;">
+    <div class="k">Hipótesis 02</div>
+    <h3>Phishing</h3>
+    <p>Víctimas que entregaron su frase semilla sin darse cuenta.</p>
+  </div>
+  <p class="body" style="margin-top: 40px;"><b>Ninguna está confirmada.</b> Desconfía de titulares tipo “hackearon Ledger”.</p>
+  <div class="footer">
+    <div>www.hiwomenbiz.com</div>
+    <div class="count">05 / 08</div>
+  </div>
+</section>
+
+<!-- 06 · SI COMPRASTE A CRYPTOBILIS -->
+<section class="slide pink" id="s6">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">05 — Haz esto hoy</div>
+  </div>
+  <h2 style="margin-top: 140px; font-size: 74px;">¿Compraste a CryptoBilis en los <em>últimos 90 días?</em></h2>
+  <div style="margin-top: 64px; display: flex; flex-direction: column; gap: 26px;">
+    <div class="card" style="background: rgba(8,6,20,.38); border-color: rgba(255,255,255,.25);">
+      <div class="k" style="color:#fff;">Si aún no lo usas</div>
+      <h3 style="margin:0;">No lo configures.</h3>
+    </div>
+    <div class="card" style="background: rgba(8,6,20,.38); border-color: rgba(255,255,255,.25);">
+      <div class="k" style="color:#fff;">Si ya lo usas</div>
+      <h3 style="margin:0; font-size: 44px;">Crea una frase semilla nueva en un dispositivo nuevo y mueve tus fondos.</h3>
+    </div>
+  </div>
+  <p class="note" style="margin-top: 34px; color: rgba(255,255,255,.85);">Recomendación oficial de Ledger.</p>
+  <div class="footer" style="color:#fff;">
+    <div>www.hiwomenbiz.com</div>
+    <div class="count">06 / 08</div>
+  </div>
+</section>
+
+<!-- 07 · CHECKLIST -->
+<section class="slide alt" id="s7">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">06 — Checklist</div>
+  </div>
+  <h2 style="margin-top: 100px; font-size: 60px;">Tu wallet es tan segura como <em class="pink-t">el camino que hizo</em> hasta tus manos.</h2>
+  <ul class="list" style="margin-top: 44px; gap: 18px;">
+    <li style="font-size: 28px; padding: 22px 28px;"><span class="n">1</span><span><b>Compra solo</b> en la tienda oficial o revendedores autorizados.</span></li>
+    <li style="font-size: 28px; padding: 22px 28px;"><span class="n">2</span><span>¿Llegó con frase escrita o ya configurado? <b>No lo uses.</b></span></li>
+    <li style="font-size: 28px; padding: 22px 28px;"><span class="n">3</span><span>La frase la genera <b>el dispositivo, frente a ti.</b></span></li>
+    <li style="font-size: 28px; padding: 22px 28px;"><span class="n">4</span><span><b>Nunca</b> la escribas en una web, app, nube ni foto.</span></li>
+    <li style="font-size: 28px; padding: 22px 28px;"><span class="n v">5</span><span>Soporte <b>jamás</b> te pedirá tus 24 palabras.</span></li>
+  </ul>
+  <div class="footer">
+    <div>www.hiwomenbiz.com</div>
+    <div class="count">07 / 08</div>
+  </div>
+</section>
+
+<!-- 08 · CIERRE -->
+<section class="slide" id="s8">
+  <div class="top">
+    <img class="logo" src="logo-wb-white.png" alt="womenbiz">
+    <div class="eyebrow">Women <span style="font-style:italic; text-transform:none; font-family:'Playfair Display',serif; letter-spacing:0;">in</span> Finance</div>
+  </div>
+  <div style="margin-top: 180px; text-align: center;">
+    <h1 style="font-size: 100px;">En cripto, tu seguridad <em class="pink-t">también se aprende.</em></h1>
+  </div>
+  <div style="display:flex; justify-content:center; margin-top: 60px;">
+    <div class="rule">Guarda · Comparte</div>
+  </div>
+  <p class="lead" style="margin-top: 44px; text-align: center;">Envíaselo a esa amiga que tiene <b>cripto en una wallet.</b></p>
+  <p class="note" style="margin-top: 80px; text-align: center; font-size: 21px;">Caso en desarrollo al 9 oct 2026. Fuentes: CoinDesk, Bloomberg, The Coin Republic.<br>Contenido educativo, no es asesoría financiera.</p>
+  <div class="footer" style="justify-content: center; gap: 40px;">
+    <div>@hiwomenbiz</div><div style="opacity:.5">·</div><div>www.hiwomenbiz.com</div>
+  </div>
+</section>
+
+</body>
+</html>
