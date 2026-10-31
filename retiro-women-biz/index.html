@@ -1,0 +1,549 @@
+<title>Retiro BUILD Women Biz</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: una columna editorial de 960px; bandas "tejidas" (chumpi) separan los capítulos; la calculadora es la única pieza con tarjeta. */
+:root{
+  --bg:#FBF6F7; --surface:#FFFFFF; --ink:#1E1B33; --muted:#625D78; --line:#E7DDE2;
+  --cochinilla:#A3123F; --indigo:#2B2A6B; --maiz:#D99A0B; --sage:#2F7A5B; --risk:#B4441B;
+  --tint:#F5E9EE;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14121E; --surface:#1D1A2B; --ink:#F2ECF0; --muted:#A9A2BD; --line:#332E47;
+  --cochinilla:#F0577F; --indigo:#A9A6F2; --maiz:#F2B83A; --sage:#5FC394; --risk:#F08A5D; --tint:#2A2032; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14121E; --surface:#1D1A2B; --ink:#F2ECF0; --muted:#A9A2BD; --line:#332E47;
+  --cochinilla:#F0577F; --indigo:#A9A6F2; --maiz:#F2B83A; --sage:#5FC394; --risk:#F08A5D; --tint:#2A2032; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cochinilla)}
+.lede{font-size:1.1rem;color:var(--muted);max-width:62ch}
+section{padding-block:56px;display:grid;gap:24px}
+.prose{display:grid;gap:12px;max-width:68ch}
+a{color:var(--cochinilla)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--maiz);outline-offset:2px}
+
+/* Banda tejida: rombos y zigzag como en un chumpi andino */
+.chumpi{height:22px;background:
+  linear-gradient(135deg,var(--cochinilla) 25%,transparent 25%) -11px 0/22px 22px,
+  linear-gradient(225deg,var(--cochinilla) 25%,transparent 25%) -11px 0/22px 22px,
+  linear-gradient(315deg,var(--indigo) 25%,transparent 25%) 0 0/22px 22px,
+  linear-gradient(45deg,var(--indigo) 25%,var(--maiz) 25%) 0 0/22px 22px;opacity:.95}
+.chumpi.thin{height:8px;background:repeating-linear-gradient(90deg,var(--cochinilla) 0 14px,var(--maiz) 14px 20px,var(--indigo) 20px 34px,var(--bg) 34px 38px)}
+
+/* Hero */
+.hero{padding-block:56px 40px;display:grid;gap:22px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--cochinilla)}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.fact{font-family:var(--mono);font-size:.82rem;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-variant-numeric:tabular-nums}
+.fact b{color:var(--cochinilla)}
+
+/* Cuestionamientos */
+.challenges{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 32px}
+.ch{display:grid;gap:6px;padding-top:14px;border-top:2px solid var(--ink)}
+.ch .q{font-family:var(--display);font-weight:700;font-size:1.08rem}
+.ch .a{color:var(--muted)}
+.ch .a b{color:var(--ink)}
+
+/* Promesa */
+.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.pr{background:var(--tint);border-radius:6px;padding:18px;display:grid;gap:6px;align-content:start}
+.pr .n{font-family:var(--mono);font-size:.75rem;color:var(--cochinilla)}
+.pr p{color:var(--muted);font-size:.95rem}
+
+/* Tablas */
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.93rem}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:.86rem;white-space:nowrap}
+.pick{background:var(--tint)}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;padding:2px 8px;border-radius:999px;background:var(--cochinilla);color:var(--bg);white-space:nowrap}
+.tag.alt{background:transparent;color:var(--muted);border:1px solid var(--line)}
+
+/* Programa */
+.days{display:grid;gap:0}
+.day{display:grid;grid-template-columns:120px 1fr;gap:20px;padding-block:20px;border-top:1px solid var(--line)}
+.day:last-child{border-bottom:1px solid var(--line)}
+.day .when{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.day .when b{display:block;font-family:var(--display);font-size:1.6rem;color:var(--cochinilla);line-height:1}
+.day .body{display:grid;gap:6px;min-width:0}
+.day .verb{font-family:var(--display);font-weight:800;font-size:1.25rem}
+.day ul{margin:0;padding-left:18px;color:var(--muted)}
+.day .xp{font-size:.92rem}
+.day .xp b{color:var(--sage)}
+.rhythm{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.78rem}
+.rhythm span{padding:5px 10px;border-radius:4px;background:var(--tint)}
+@media (max-width:560px){.day{grid-template-columns:1fr;gap:8px}}
+
+/* Logística */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.two > div{display:grid;gap:10px;align-content:start;min-width:0}
+.list{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--muted)}
+.list b{color:var(--ink)}
+
+/* Calculadora */
+.calc{background:var(--surface);border:1.5px solid var(--ink);border-radius:8px;padding:24px;display:grid;gap:22px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{font:600 .9rem var(--body);padding:8px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.field{display:grid;gap:6px}
+.field label{font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.field label output{font-family:var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+.field input[type=number]{font:500 1rem var(--mono);padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%;box-sizing:border-box}
+input[type=range]{width:100%;accent-color:var(--cochinilla)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.kpi{background:var(--surface);padding:14px 16px;display:grid;gap:2px}
+.kpi span{font-size:.78rem;color:var(--muted)}
+.kpi b{font-family:var(--mono);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.kpi b.good{color:var(--sage)} .kpi b.bad{color:var(--risk)}
+.bar{display:flex;height:28px;border-radius:4px;overflow:hidden;background:var(--line)}
+.bar div{height:100%;min-width:0;transition:width .3s}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.note{font-size:.85rem;color:var(--muted)}
+.c-var{background:var(--indigo)} .c-fix{background:var(--maiz)} .c-team{background:#8E7CC3} .c-cont{background:var(--muted)} .c-fee{background:var(--line);outline:1px solid var(--muted)} .c-profit{background:var(--sage)}
+
+/* Agentes */
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px 28px}
+.agent{display:grid;gap:8px;align-content:start}
+.agent h3{display:flex;gap:10px;align-items:baseline}
+.agent h3 small{font-family:var(--mono);font-size:.7rem;color:var(--muted);font-weight:400}
+.agent ol{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:4px;font-size:.94rem}
+
+/* Timeline */
+.tl{display:grid;gap:0;border-left:3px solid var(--cochinilla);margin-left:6px}
+.tl > div{padding:0 0 18px 20px;position:relative;display:grid;gap:2px}
+.tl > div::before{content:"";position:absolute;left:-9px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--cochinilla)}
+.tl .d{font-family:var(--mono);font-size:.8rem;color:var(--cochinilla)}
+.tl .gate::before{background:var(--maiz);border-color:var(--maiz)}
+
+/* Riesgos */
+.risks td:first-child{font-weight:600}
+.sources{font-size:.85rem;color:var(--muted);columns:2 280px;column-gap:28px}
+.sources a{word-break:break-word}
+.sources li{margin-bottom:6px;break-inside:avoid}
+footer{padding-block:36px 56px;color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="chumpi" aria-hidden="true"></div>
+
+<header class="wrap hero">
+  <span class="eyebrow">Women Biz · Proyecto 2027 · Guiado por Briguit Reinaldo</span>
+  <h1>Llegas con una idea.<br>Te vas con un <em>negocio construido con IA.</em></h1>
+  <p class="lede">Retiro BUILD: 6 días y 5 noches todo incluido en el Valle Sagrado, Perú, para emprendedoras de toda Latinoamérica. Te recogemos en el aeropuerto, te alojamos, te alimentamos y te acompañamos hasta tu primera venta.</p>
+  <div class="facts">
+    <span class="fact"><b>25–30</b> abril 2027</span>
+    <span class="fact"><b>16</b> cupos (máx. 20)</span>
+    <span class="fact">desde <b>US$2,790</b></span>
+    <span class="fact">equilibrio con <b>10</b> inscritas</span>
+    <span class="fact">utilidad estimada <b>~US$13.5k</b> con 16</span>
+  </div>
+</header>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<main class="wrap">
+
+<section id="cuestiono">
+  <span class="eyebrow">Antes de comprar nada</span>
+  <h2>Seis cosas que te cuestiono</h2>
+  <p class="lede">Me pediste que piense en grande y te cuestione. Estas decisiones cambian el éxito del retiro más que el hotel.</p>
+  <div class="challenges">
+    <div class="ch"><p class="q">¿5 o 7 días? Ninguno: 6 días, 5 noches.</p><p class="a">7 días saca a una emprendedora (muchas son mamás) demasiado tiempo de su negocio y encarece todo un 30%. 5 días no alcanza para aclimatarse a la altura y construir. <b>Domingo a viernes</b> funciona: pierden solo 4 días hábiles.</p></div>
+    <div class="ch"><p class="q">"Generar un negocio" no se puede medir.</p><p class="a">Cambia la promesa a algo verificable: <b>oferta validada, producto mínimo funcionando, página con cobro activo y primera venta o 10 conversaciones con clientas</b>. Eso se vende solo y genera testimonios.</p></div>
+    <div class="ch"><p class="q">¿Para quién es? No puede ser para todas.</p><p class="a">Si mezclas principiantes con emprendedoras que ya facturan, ambas se frustran. Te propongo: <b>mujeres con negocio o idea clara y presupuesto</b>, incluidas latinas en EE.UU. que pagan en dólares. Admisión por aplicación + llamada de 15 min.</p></div>
+    <div class="ch"><p class="q">El negocio no se construye en 6 días.</p><p class="a">Se construye en 10 semanas: <b>4 semanas de preparación online</b> (cuentas, idea, herramientas listas) + el retiro + <b>90 días de seguimiento</b>. Sin la preparación, pierdes los dos primeros días configurando cuentas.</p></div>
+    <div class="ch"><p class="q">Cada experiencia debe alimentar el negocio.</p><p class="a">Nada de turismo por turismo. El taller con tejedoras de Chinchero es una clase de emprendimiento; la salida a Maras es la <b>sesión de fotos de marca</b> de cada una. Así justificas el precio.</p></div>
+    <div class="ch"><p class="q">Una sola mentora no alcanza.</p><p class="a">Con 16 chicas construyendo a la vez necesitas <b>2 facilitadoras (tú + una builder técnica)</b> y una coordinadora de logística. Tú lideras visión, ventas y marca; no te pongas a resolver contraseñas.</p></div>
+  </div>
+</section>
+
+<section id="promesa">
+  <span class="eyebrow">Lo que cada participante se lleva</span>
+  <h2>La promesa, en entregables</h2>
+  <div class="promise">
+    <div class="pr"><span class="n">ENTREGABLE 1</span><h3>Oferta validada</h3><p>Clienta ideal, problema, precio y 10 conversaciones reales hechas durante el retiro.</p></div>
+    <div class="pr"><span class="n">ENTREGABLE 2</span><h3>Producto con IA</h3><p>App, agente, servicio automatizado o producto digital funcionando (Base44, Claude, automatizaciones).</p></div>
+    <div class="pr"><span class="n">ENTREGABLE 3</span><h3>Marca y página con cobro</h3><p>Identidad, landing publicada, pasarela de pago activa y fotos profesionales.</p></div>
+    <div class="pr"><span class="n">ENTREGABLE 4</span><h3>Plan de 90 días</h3><p>Pitch grabado, plan de contenido y metas de ventas con acompañamiento mensual.</p></div>
+  </div>
+</section>
+
+<section id="existe">
+  <span class="eyebrow">Qué hay, qué no hay</span>
+  <h2>El espacio está libre</h2>
+  <div class="prose">
+    <p>No encontré ningún retiro todo incluido para emprendedoras latinoamericanas enfocado en construir un negocio con IA, ni en Perú ni en la región. Lo más cercano:</p>
+    <ul class="list">
+      <li><b>500 Global Founders Retreat</b> (México, octubre 2026): todo incluido y con sesión de construcción con IA, pero para founders en general, no para mujeres ni para crear el negocio desde cero.</li>
+      <li><b>IA Camp de Chicas en Tecnología</b>: gratuito y online, para chicas de 13 a 23 años. Otro público.</li>
+      <li><b>Women in Tech Argentina</b>: evento de un día sobre IA, negocio y liderazgo. Inspira, pero no construye.</li>
+      <li><b>Retiros de yoga en el Valle Sagrado</b>: hay muchos, pero ninguno con un entregable de negocio.</li>
+    </ul>
+    <p>Tu ventaja: vives en Nueva York, eres peruana, sabes de IA y blockchain y tienes comunidad. Ese cruce no lo tiene nadie más en este nicho.</p>
+  </div>
+</section>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<section id="destino">
+  <span class="eyebrow">Dónde nos quedamos</span>
+  <h2>Tres destinos, una recomendación</h2>
+  <p class="lede">Precios de referencia encontrados en buscadores (octubre 2026). Las tarifas de grupo se piden directo al área de eventos de cada hotel y suelen salir más bajas.</p>
+  <div class="tablebox">
+    <table>
+      <thead><tr><th>Destino</th><th>Hoteles a cotizar</th><th class="num">Hab. doble / noche</th><th>Llegada</th><th>Internet</th><th>Atractivo para LatAm</th></tr></thead>
+      <tbody>
+        <tr class="pick"><td><b>Valle Sagrado</b> (Urubamba, 2,870 m)<br><span class="tag">Recomendado</span></td><td>Casa Andina Premium Valle Sagrado; Sonesta Posadas del Inca Yucay (2 salones, ~212 m²); Inti Punku; hacienda de uso exclusivo</td><td class="num">US$80–155<br>(5★: 400+)</td><td>Vuelo Lima–Cusco (US$70–120 i/v) + van 1h30</td><td>Wifi del hotel + Starlink de respaldo</td><td>Muy alto: la foto "construí mi negocio en el Valle Sagrado" vende sola</td></tr>
+        <tr><td><b>Paracas</b> (nivel del mar)<br><span class="tag alt">Plan B</span></td><td>Casa Andina Select Paracas (~150 hab., salones y playa privada); Hotel Paracas Luxury Collection</td><td class="num">US$103–129<br>(5★: 183–390)</td><td>Solo Lima + Sprinter 3–4 h</td><td>Wifi del hotel + Starlink</td><td>Alto, mejor de diciembre a abril (verano)</td></tr>
+        <tr><td><b>Casa hacienda cerca de Lima</b> (Cieneguilla / Pachacámac)<br><span class="tag alt">Edición lite</span></td><td>Casa de campo de uso exclusivo con piscina y salón</td><td class="num">S/3,500 fin de semana (12 pers.)</td><td>1–1.5 h desde el aeropuerto</td><td>Starlink obligatorio</td><td>Medio: mejor para el mercado peruano y para una versión de fin de semana</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <p><b>Mi recomendación:</b> primera edición en el Valle Sagrado, con Casa Andina Premium o Sonesta Yucay como primeras opciones a cotizar. Pide también una hacienda de uso exclusivo: con 16 personas puede salir igual o más barata, tendrás el salón solo para ustedes y controlas el internet.</p>
+    <p>Paracas queda como plan B o como segunda edición en verano (febrero o marzo 2028). La casa hacienda cerca de Lima sirve para una versión de 3 días a menor precio que alimente la edición grande.</p>
+  </div>
+</section>
+
+<section id="fechas">
+  <span class="eyebrow">Cuándo</span>
+  <h2>Domingo 25 al viernes 30 de abril de 2027</h2>
+  <div class="prose">
+    <ul class="list">
+      <li><b>Por qué abril:</b> terminan las lluvias en Cusco, es temporada media (más barata que junio–agosto) y te da 6 meses para vender.</li>
+      <li><b>Evita la semana del 9 de mayo:</b> es Día de la Madre en Perú y casi toda Latinoamérica. Perderías a buena parte de tu público.</li>
+      <li><b>Semana Santa 2027</b> termina el 28 de marzo, así que abril queda libre de feriados largos.</li>
+      <li><b>Fecha alternativa:</b> domingo 16 al viernes 21 de mayo de 2027.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<section id="programa">
+  <span class="eyebrow">Programa</span>
+  <h2>De la idea al primer cobro</h2>
+  <div class="rhythm" aria-label="Ritmo diario">
+    <span>07:00 movimiento / yoga</span><span>08:00 desayuno</span><span>09:00–13:00 sprint de construcción</span><span>13:00 almuerzo</span><span>15:00–18:00 mentorías 1:1 + construcción</span><span>18:30 experiencia</span><span>20:00 cena</span>
+  </div>
+  <div class="days">
+    <div class="day"><div class="when"><b>−4 sem</b>29 mar – 24 abr</div><div class="body"><p class="verb">Preparar (online)</p><ul><li>3 sesiones en vivo por Zoom: diagnóstico, elegir una idea, conocer las herramientas.</li><li>Checklist técnica: cuentas de IA, dominio, pasarela de pago (Stripe, Mercado Pago o Yape según país) y redes listas.</li><li>Tarea: lista de 30 posibles clientas para entrevistar durante el retiro.</li></ul></div></div>
+    <div class="day"><div class="when"><b>Día 1</b>dom 25 abr</div><div class="body"><p class="verb">Llegar e intención</p><ul><li>Recojo en el aeropuerto de Cusco en dos horarios (10:00 y 13:00) y bajada directa al Valle, que está más bajo que Cusco y ayuda con la altura.</li><li>Kit de bienvenida, mate de coca, tarde libre para aclimatarse.</li><li>Círculo de apertura: tu historia, tu intención, la regla del retiro.</li></ul><p class="xp"><b>Experiencia:</b> cena de bienvenida con cocina andina de producto local.</p></div></div>
+    <div class="day"><div class="when"><b>Día 2</b>lun 26 abr</div><div class="body"><p class="verb">Validar</p><ul><li>Investigación de mercado con IA: competencia, precios, clienta ideal.</li><li>Llamadas reales a clientas potenciales (meta: 5 cada una).</li><li>Diseño de la oferta y precio. Pitch de problema en 60 segundos.</li></ul><p class="xp"><b>Experiencia:</b> fogata y "mesa de mentoras" con 2 emprendedoras invitadas, en vivo o por video.</p></div></div>
+    <div class="day"><div class="when"><b>Día 3</b>mar 27 abr</div><div class="body"><p class="verb">Construir</p><ul><li>Producto mínimo con IA sin código: app en Base44, agente con Claude, automatizaciones.</li><li>Clínica técnica por grupos de nivel.</li></ul><p class="xp"><b>Experiencia:</b> taller con una cooperativa de tejedoras en Chinchero. Emprendimiento ancestral de mujeres, cómo fijan precios y venden.</p></div></div>
+    <div class="day"><div class="when"><b>Día 4</b>mié 28 abr</div><div class="body"><p class="verb">Marca y contenido</p><ul><li>Identidad visual y mensaje con IA, landing publicada.</li><li>Plan de contenido de 30 días y guiones de video.</li></ul><p class="xp"><b>Experiencia:</b> salida a Moray y Salineras de Maras con fotógrafa profesional. Cada una vuelve con fotos para su marca.</p></div></div>
+    <div class="day"><div class="when"><b>Día 5</b>jue 29 abr</div><div class="body"><p class="verb">Vender</p><ul><li>Pasarela de pago activa y lanzamiento en vivo a su red: "la hora de la verdad".</li><li>Seguimiento de las conversaciones del día 2 para cerrar ventas.</li><li>Ensayo de pitch.</li></ul><p class="xp"><b>Experiencia:</b> Demo Day y cena de gala, con aliadas e inversionistas conectadas por video. Certificado y reconocimiento a la primera venta.</p></div></div>
+    <div class="day"><div class="when"><b>Día 6</b>vie 30 abr</div><div class="body"><p class="verb">Cerrar y despegar</p><ul><li>Plan de 90 días, parejas de accountability, foto final.</li><li>Traslado al aeropuerto de Cusco (salida 10:00 para vuelos de la tarde).</li></ul><p class="xp"><b>Extensión opcional:</b> Machu Picchu 2 días / 1 noche, se cotiza aparte y deja comisión.</p></div></div>
+    <div class="day"><div class="when"><b>+90 días</b>may – jul</div><div class="body"><p class="verb">Acompañar</p><ul><li>Sesión grupal mensual + Demo Day virtual en julio con métricas reales.</li><li>Comunidad privada de exalumnas: será tu canal de ventas para la segunda edición.</li></ul></div></div>
+  </div>
+</section>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<section id="logistica">
+  <span class="eyebrow">Logística</span>
+  <h2>Cómodas de principio a fin</h2>
+  <div class="two">
+    <div>
+      <h3>Transporte y taxis</h3>
+      <ul class="list">
+        <li><b>Lima, aeropuerto a Miraflores (si hacen noche):</b> taxi oficial del aeropuerto, aprox. S/60–85 (US$17–25). Nunca taxi de la calle.</li>
+        <li><b>Vuelo Lima–Cusco:</b> US$70–120 ida y vuelta con JetSMART, Sky o LATAM si compran con anticipación. Lo paga cada participante; tú les das el horario recomendado.</li>
+        <li><b>Aeropuerto de Cusco a Urubamba:</b> van privada US$75–130 por vehículo (4–7 pasajeras), 1h30–1h45. Para el grupo: minibús de 20 asientos en los dos horarios fijos.</li>
+        <li><b>Excursiones (Chinchero, Maras, Moray):</b> minibús con chofer todo el día, se cotiza con el operador local.</li>
+        <li><b>Si fuera Paracas:</b> Sprinter privada Lima–Paracas US$270–400 por tramo (hasta 10 pasajeras), 3–4 h. Necesitarías 2.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Internet de alto rendimiento</h3>
+      <ul class="list">
+        <li><b>Pide por contrato</b> una red dedicada para el salón de al menos 100 Mbps, y haz una prueba de velocidad en la visita técnica.</li>
+        <li><b>Respaldo con Starlink:</b> plan residencial aprox. S/193 al mes (~US$55) y antena en promoción a S/875. Dos semanas de margen para instalar.</li>
+        <li><b>Tercer respaldo:</b> 2 routers 4G con chips de Claro y Entel.</li>
+        <li><b>Regla de oro:</b> todo lo que se pueda preparar antes (cuentas, plantillas, descargas) se hace en la etapa online.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Salud, altura y seguridad</h3>
+      <ul class="list">
+        <li><b>Altura:</b> Cusco está a 3,400 m y el Valle a 2,870 m. Se baja directo al Valle, el primer día es suave y el hotel debe tener oxígeno.</li>
+        <li><b>Seguro de viaje</b> obligatorio para cada participante, y seguro de responsabilidad civil para tu empresa.</li>
+        <li><b>Seguridad:</b> EE.UU. mantiene a Perú en nivel 2 (precaución). Con traslados privados y grupo acompañado el riesgo baja mucho.</li>
+        <li><b>Protestas:</b> revisa el estado de las carreteras del sur la semana previa y ten un plan de traslado alternativo.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Impuestos: un ahorro posible</h3>
+      <ul class="list">
+        <li><b>Extranjeras no domiciliadas</b> pueden quedar exoneradas del IGV (18%) en hospedaje presentando pasaporte. Las peruanas lo pagan: ajusta su precio o absórbelo.</li>
+        <li><b>Si vendes desde tu empresa en EE.UU.</b> y compras el paquete a un operador turístico peruano registrado en SUNAT, los servicios (alimentación, transporte, guías) pueden contar como exportación sin IGV.</li>
+        <li><b>Confírmalo con un contador peruano</b> antes de fijar precios. Puede ser hasta un 18% de ahorro en costos.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<section id="numeros">
+  <span class="eyebrow">Rentabilidad</span>
+  <h2>Los números, para que juegues</h2>
+  <p class="lede">Mueve los valores. Los costos son estimaciones a partir de la investigación y deben reemplazarse con cotizaciones reales. Precios en dólares, sin vuelos.</p>
+
+  <div class="calc" id="calc">
+    <div class="field">
+      <span class="note">Destino</span>
+      <div class="seg" role="group" aria-label="Destino">
+        <button type="button" id="d-valle" data-d="valle" aria-pressed="true">Valle Sagrado</button>
+        <button type="button" id="d-paracas" data-d="paracas" aria-pressed="false">Paracas</button>
+        <button type="button" id="d-lima" data-d="lima" aria-pressed="false">Casa hacienda Lima</button>
+      </div>
+    </div>
+    <div class="inputs">
+      <div class="field"><label for="n">Inscritas <output id="n-o">16</output></label><input type="range" id="n" min="6" max="24" value="16"></div>
+      <div class="field"><label for="eb">Con precio early bird <output id="eb-o">8</output></label><input type="range" id="eb" min="0" max="16" value="8"></div>
+      <div class="field"><label for="sg">Habitación privada <output id="sg-o">6</output></label><input type="range" id="sg" min="0" max="16" value="6"></div>
+      <div class="field"><label for="pr">Precio regular (US$)</label><input type="number" id="pr" value="3290" step="50" min="0"></div>
+      <div class="field"><label for="pe">Precio early bird (US$)</label><input type="number" id="pe" value="2790" step="50" min="0"></div>
+      <div class="field"><label for="ps">Suplemento hab. privada (US$)</label><input type="number" id="ps" value="590" step="10" min="0"></div>
+      <div class="field"><label for="sp">Patrocinios (US$)</label><input type="number" id="sp" value="0" step="500" min="0"></div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><span>Ingresos</span><b id="k-rev">—</b></div>
+      <div class="kpi"><span>Costos totales</span><b id="k-cost">—</b></div>
+      <div class="kpi"><span>Utilidad</span><b id="k-profit">—</b></div>
+      <div class="kpi"><span>Margen</span><b id="k-margin">—</b></div>
+      <div class="kpi"><span>Punto de equilibrio</span><b id="k-be">—</b></div>
+    </div>
+    <div class="bar" id="bar" aria-hidden="true"></div>
+    <div class="legend">
+      <span><i class="c-var"></i>Por participante</span><span><i class="c-fix"></i>Logística fija</span><span><i class="c-team"></i>Equipo y marketing</span><span><i class="c-cont"></i>Contingencia 8%</span><span><i class="c-fee"></i>Comisiones de pago 4%</span><span><i class="c-profit"></i>Utilidad</span>
+    </div>
+    <p class="note" id="calc-note"></p>
+  </div>
+
+  <div class="tablebox">
+    <table id="breakdown">
+      <thead><tr><th>Concepto</th><th>Tipo</th><th class="num">US$</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <p><b>Lo que dicen los números:</b> con 16 inscritas, el Valle Sagrado deja ~26% de margen, Paracas ~18% y la casa hacienda en Lima ~11%. El destino más barato no es el más rentable: el equipo y el marketing cuestan casi lo mismo en los tres, y el Valle Sagrado permite cobrar más.</p>
+    <p><b>Precios sugeridos:</b> early bird US$2,790 (primeras 8, hasta el 15 de enero), regular US$3,290, habitación privada +US$590. Plan de pagos en 3 cuotas. Reserva con US$500 no reembolsables, 50% a 60 días del retiro y saldo a 45 días.</p>
+    <p><b>Cómo subir el margen sin subir el precio:</b> un patrocinador de herramientas de IA o un banco con programa de mujeres emprendedoras (US$5–10k), la comisión de la extensión a Machu Picchu y una edición online de las 4 semanas de preparación para quienes no pueden viajar.</p>
+  </div>
+</section>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<section id="incluye">
+  <span class="eyebrow">Paquete</span>
+  <h2>Qué incluye y qué no</h2>
+  <div class="two">
+    <div>
+      <h3>Incluye</h3>
+      <ul class="list">
+        <li>5 noches en hotel 4★ en habitación compartida (privada con suplemento)</li>
+        <li>Desayuno, almuerzo y cena, coffee breaks, cena de gala</li>
+        <li>Recojo y retorno al aeropuerto de Cusco en horarios del grupo</li>
+        <li>Todas las excursiones, entradas y talleres del programa</li>
+        <li>4 semanas de preparación online + 90 días de seguimiento</li>
+        <li>Mentoría 1:1 con Briguit y la facilitadora técnica</li>
+        <li>Sesión de fotos de marca, kit de bienvenida y créditos de herramientas de IA por 2 meses</li>
+        <li>Internet dedicado con respaldo satelital</li>
+      </ul>
+    </div>
+    <div>
+      <h3>No incluye</h3>
+      <ul class="list">
+        <li>Vuelos internacionales y vuelo Lima–Cusco</li>
+        <li>Seguro de viaje (obligatorio)</li>
+        <li>Noches extra en Lima o Cusco</li>
+        <li>Extensión Machu Picchu (opcional)</li>
+        <li>Gastos personales, propinas y bebidas alcohólicas fuera de la cena de gala</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="chumpi thin" aria-hidden="true"></div>
+
+<section id="agentes">
+  <span class="eyebrow">Proyecto para tus agentes de Women Biz</span>
+  <h2>Quién hace qué</h2>
+  <p class="lede">Siete frentes de trabajo para asignar a tus agentes de IA, cada uno con sus primeras tareas. Tú apruebas en cada punto de decisión.</p>
+  <div class="agents">
+    <div class="agent"><h3>Agente Estratega <small>producto</small></h3><ol><li>Cerrar la promesa y los 4 entregables medibles.</li><li>Escribir el currículo día por día y la preparación online.</li><li>Crear la rúbrica de "negocio lanzado" para el Demo Day.</li></ol></div>
+    <div class="agent"><h3>Agente Logística <small>operaciones</small></h3><ol><li>Pedir cotización de grupo a 3 hoteles y 1 hacienda (25–30 abr, 18 hab., salón, wifi).</li><li>Cotizar operador turístico local con minibús y guía.</li><li>Armar el minuto a minuto del retiro y el plan B de internet.</li></ol></div>
+    <div class="agent"><h3>Agente Finanzas <small>dinero</small></h3><ol><li>Actualizar este modelo con cotizaciones reales.</li><li>Configurar cobros (Stripe en USD, Yape o transferencia para Perú) y cuotas.</li><li>Redactar términos y política de cancelación. Consulta de IGV con contador.</li></ol></div>
+    <div class="agent"><h3>Agente Marketing <small>demanda</small></h3><ol><li>Landing del retiro con formulario de aplicación (en Base44).</li><li>Masterclass gratuita "Tu negocio con IA en 90 minutos" como imán de inscripciones.</li><li>Calendario de contenido de 12 semanas con tu historia NY–Perú.</li></ol></div>
+    <div class="agent"><h3>Agente Ventas <small>admisión</small></h3><ol><li>Formulario de aplicación con filtro de perfil y presupuesto.</li><li>Agenda de llamadas de 15 min y guion de admisión.</li><li>Secuencia de WhatsApp y email hasta el cierre del early bird.</li></ol></div>
+    <div class="agent"><h3>Agente Alianzas <small>patrocinios</small></h3><ol><li>Lista de 20 marcas objetivo: herramientas de IA, bancos, fintech, marcas de mujeres.</li><li>Deck de patrocinio con 3 niveles.</li><li>Invitar 2 mentoras y 3 inversionistas para el Demo Day.</li></ol></div>
+    <div class="agent"><h3>Agente Comunidad <small>experiencia</small></h3><ol><li>Onboarding de inscritas y grupo privado.</li><li>Kit de bienvenida y guía de viaje (altura, ropa, vuelos).</li><li>Programa de seguimiento de 90 días y recolección de testimonios.</li></ol></div>
+  </div>
+</section>
+
+<section id="cronograma">
+  <span class="eyebrow">Cronograma</span>
+  <h2>De hoy al Demo Day</h2>
+  <div class="tl">
+    <div><span class="d">2 – 15 nov 2026</span><p><b>Validar demanda:</b> lista de espera, encuesta y 10 llamadas con mujeres de tu comunidad. Pedir cotizaciones.</p></div>
+    <div><span class="d">16 – 30 nov</span><p><b>Abrir aplicaciones:</b> landing publicada, masterclass gratuita, early bird activo.</p></div>
+    <div><span class="d">dic 2026</span><p><b>Contrato con el hotel</b> con cláusula de reducción de habitaciones sin penalidad hasta el punto de decisión.</p></div>
+    <div><span class="d">15 ene 2027</span><p><b>Cierre del early bird.</b> Meta: 8 inscritas pagadas.</p></div>
+    <div class="gate"><span class="d">9 feb 2027 · punto de decisión</span><p><b>¿Hay 10 inscritas pagadas?</b> Sí: se confirma todo. No: se mueve a mayo o se pasa a la edición lite en Lima, con reembolso o traslado del pago.</p></div>
+    <div><span class="d">29 mar – 24 abr</span><p><b>Preparación online</b> de 4 semanas. Visita técnica y prueba de internet.</p></div>
+    <div><span class="d">25 – 30 abr 2027</span><p><b>Retiro BUILD</b> en el Valle Sagrado.</p></div>
+    <div><span class="d">jul 2027</span><p><b>Demo Day virtual</b> con resultados a 90 días y lanzamiento de la segunda edición.</p></div>
+  </div>
+</section>
+
+<section id="riesgos">
+  <span class="eyebrow">Riesgos</span>
+  <h2>Qué puede salir mal y cómo lo evitamos</h2>
+  <div class="tablebox">
+    <table class="risks">
+      <thead><tr><th>Riesgo</th><th>Mitigación</th></tr></thead>
+      <tbody>
+        <tr><td>No se llenan los cupos</td><td>Validar antes de pagar, punto de decisión el 9 de febrero, contrato flexible con el hotel y edición lite como respaldo.</td></tr>
+        <tr><td>Se cae el internet</td><td>Red dedicada por contrato, Starlink y 4G de respaldo, preparación online previa.</td></tr>
+        <tr><td>Mal de altura</td><td>Llegada directa al Valle, día 1 suave, oxígeno en el hotel y guía de salud antes de viajar.</td></tr>
+        <tr><td>Niveles muy distintos</td><td>Admisión por aplicación, grupos por nivel y facilitadora técnica dedicada.</td></tr>
+        <tr><td>Protestas o bloqueos</td><td>Seguro, operador local con rutas alternas y comunicación diaria con el grupo.</td></tr>
+        <tr><td>Tú te quemas</td><td>Coordinadora de logística a cargo de todo lo operativo; tú solo guías y vendes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="fuentes">
+  <span class="eyebrow">Fuentes de la investigación</span>
+  <ul class="sources">
+    <li><a href="https://www.es.momondo.com/hoteles/urubamba/Casa-Andina-Premium-Valle-Sagrado-Hotel-Villas.mhd119152.ksp" target="_blank" rel="noopener">Casa Andina Premium Valle Sagrado (Momondo)</a></li>
+    <li><a href="https://www.es.kayak.com/Urubamba-Hoteles-Life-Hotel-Valle-Sagrado.3909827.ksp" target="_blank" rel="noopener">Life Hotel Valle Sagrado (Kayak)</a></li>
+    <li><a href="https://www.expedia.com.au/Urubamba-Hotels-Inti-Punku-Valle-Sagrado.h78630352.Hotel-Information" target="_blank" rel="noopener">Inti Punku Valle Sagrado (Expedia)</a></li>
+    <li><a href="https://www.amimagazine.global/Meeting-Event-Venues/Urubamba-Peru/Convention-Hotel/Sonesta-Posada-del-Inca-Yucay-p58010875" target="_blank" rel="noopener">Sonesta Posadas del Inca Yucay, salones (AMI)</a></li>
+    <li><a href="https://www.sonesta.com/pe/yucay/sonesta-posadas-del-inca-sacred-valley-yucay" target="_blank" rel="noopener">Sonesta Yucay, sitio oficial</a></li>
+    <li><a href="https://www.travelocity.com/Paracas-Hotels-Casa-Andina-Select-Paracas.h38026509.Hotel-Information" target="_blank" rel="noopener">Casa Andina Select Paracas (Travelocity)</a></li>
+    <li><a href="https://www.successfulmeetings.com/Meeting-Event-Venues/Paracas-Peru/Convention-Hotel/Casa-Andina-Select-Paracas-p59582945" target="_blank" rel="noopener">Casa Andina Select Paracas, eventos</a></li>
+    <li><a href="https://www.marriott.com/es/hotels/piolc-hotel-paracas-a-luxury-collection-resort-paracas/overview/" target="_blank" rel="noopener">Hotel Paracas Luxury Collection (Marriott)</a></li>
+    <li><a href="https://urbania.pe/buscar/alquiler-de-casas-campo-en-cieneguilla--lima--lima" target="_blank" rel="noopener">Casas de campo en Cieneguilla (Urbania)</a></li>
+    <li><a href="https://www.wetravel.com/trips/direct-transfer-cusco-airport-to-ollantaytambo-urubamba-cusco-local-friend-cusco-34790752" target="_blank" rel="noopener">Traslado aeropuerto Cusco a Urubamba (WeTravel)</a></li>
+    <li><a href="https://www.aaa.com/tripcanvas/thing-to-do/private-transportation-from-cusco-airport-to-urubamba-148128P1" target="_blank" rel="noopener">Traslado privado Cusco a Urubamba (AAA)</a></li>
+    <li><a href="https://venturia.rezdy.com/463112/private-transfer-lima-paracas-one-way?lang=es" target="_blank" rel="noopener">Sprinter privada Lima a Paracas (Venturia)</a></li>
+    <li><a href="https://www.kimkim.com/ab/lima-to-paracas" target="_blank" rel="noopener">Lima a Paracas, traslado privado (Kimkim)</a></li>
+    <li><a href="https://www.es.kayak.com/vuelos/Lima-Aeropuerto-Internacional-Jorge-Chavez-LIM/Cuzco-Aeropuerto-Internacional-Alejandro-Velasco-Astete-CUZ" target="_blank" rel="noopener">Vuelos Lima a Cusco (Kayak)</a></li>
+    <li><a href="https://trexperienceperu.com/es/blog/lima-a-cusco" target="_blank" rel="noopener">Cómo viajar de Lima a Cusco (Trexperience)</a></li>
+    <li><a href="https://www.peru-retail.com/starlink-baja-un-50-el-precio-de-su-servicio-de-internet-satelital-en-peru-cuanto-cuesta/" target="_blank" rel="noopener">Precios de Starlink en Perú (Perú Retail)</a></li>
+    <li><a href="https://infomercado.pe/starlink-reduce-el-50-en-su-servicio-satelital-hasta-finales-de-ano-mf/" target="_blank" rel="noopener">Planes Starlink Perú (Infomercado)</a></li>
+    <li><a href="https://founder-retreat.latam.500.co/" target="_blank" rel="noopener">500 Global Founders Retreat LatAm</a></li>
+    <li><a href="https://chicasentecnologia.org/en/2025/10/30/ia-camp-an-innovative-and-free-proposal-with-more-than-3500-women-enrolled-in-latin-america/" target="_blank" rel="noopener">IA Camp, Chicas en Tecnología</a></li>
+    <li><a href="https://www.itsitio.com/ar/?p=185618" target="_blank" rel="noopener">Women in Tech Argentina 2026</a></li>
+    <li><a href="https://latamtravellers.com/es/blogs/news/is-peru-safe-for-tourists-2026-lima-cusco-sacred-valley" target="_blank" rel="noopener">Seguridad en Perú 2026 (LatAm Travellers)</a></li>
+    <li><a href="https://noticierocontable.com/?p=12778" target="_blank" rel="noopener">IGV y paquetes turísticos, DL 1125 (Noticiero Contable)</a></li>
+    <li><a href="https://perugestiona.pe/tramites-sunat/exoneracion-igv/" target="_blank" rel="noopener">Exoneraciones de IGV 2026 (Perú Gestiona)</a></li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="wrap">Retiro BUILD · Women Biz. Proyecto preparado el 31 de octubre de 2026. Todos los precios son referencias públicas o estimaciones y se reemplazan con cotizaciones antes de vender.</footer>
+<div class="chumpi" aria-hidden="true"></div>
+
+<script>
+(function(){
+  // Costos estimados en US$. "var" = por participante; "fix" = logística del grupo; "team" = equipo y marketing.
+  const P = {
+    valle:{label:"Valle Sagrado", max:24, single:375, price:{reg:3290, eb:2790, sg:590},
+      var:[["Hospedaje 5 noches (doble)",375],["Comidas + cena de gala",265],["Coffee breaks",40],["Experiencias y entradas",90],["Kit de bienvenida",45],["Créditos de herramientas IA",60],["Seguro de accidentes del grupo",20]],
+      fix:[["Salón 4 días",1600],["Transporte: aeropuerto + excursiones",1350],["Fotógrafa/videógrafa",1800],["Internet de respaldo (Starlink + 4G)",400],["Instructora de yoga",400]],
+      team:[["Facilitadora técnica (honorario + viaje + estadía)",3750],["Coordinadora de logística",2300],["Viaje y estadía de Briguit",1950],["Marketing y anuncios",3000],["Plataformas (Zoom, formularios)",300],["Legal y seguro de responsabilidad",400]]},
+    paracas:{label:"Paracas", max:24, single:300, price:{reg:2790, eb:2390, sg:450},
+      var:[["Hospedaje 5 noches (doble)",300],["Comidas + cena de gala",270],["Coffee breaks",40],["Experiencias (Ballestas, bodega, desierto)",95],["Kit de bienvenida",45],["Créditos de herramientas IA",60],["Seguro de accidentes del grupo",20]],
+      fix:[["Salón 4 días",1400],["Sprinters Lima–Paracas + local",1420],["Fotógrafa/videógrafa",1800],["Internet de respaldo (Starlink + 4G)",400],["Instructora de yoga",400]],
+      team:[["Facilitadora técnica",3350],["Coordinadora de logística",2300],["Viaje y estadía de Briguit",1850],["Marketing y anuncios",3000],["Plataformas (Zoom, formularios)",300],["Legal y seguro de responsabilidad",400]]},
+    lima:{label:"Casa hacienda Lima", max:18, single:150, price:{reg:2290, eb:1890, sg:300},
+      var:[["Catering 5 días + cena de gala",250],["Coffee breaks",30],["Experiencias (Pachacámac, valle)",70],["Kit de bienvenida",45],["Créditos de herramientas IA",60],["Seguro de accidentes del grupo",20]],
+      fix:[["Casa de uso exclusivo 5 noches",5000],["Transporte aeropuerto + excursiones",880],["Fotógrafa/videógrafa",1800],["Starlink + 4G (obligatorio)",400],["Instructora de yoga",400],["Proyector y mobiliario",400]],
+      team:[["Facilitadora técnica",3000],["Coordinadora de logística",2000],["Viaje y estadía de Briguit",1700],["Marketing y anuncios",3000],["Plataformas (Zoom, formularios)",300],["Legal y seguro de responsabilidad",400]]}
+  };
+  const CONT=0.08, FEE=0.04;
+  const $=id=>document.getElementById(id);
+  const usd=v=>(v<0?"−":"")+"$"+Math.round(Math.abs(v)).toLocaleString("en-US");
+  const sum=a=>a.reduce((s,x)=>s+x[1],0);
+  let dest="valle";
+
+  function calc(d,n,eb,sg,reg,pe,ps,sp){
+    const p=P[d];
+    const rev=eb*pe+(n-eb)*reg+sg*ps+sp;
+    const vv=sum(p.var)*n+sg*p.single, fx=sum(p.fix), tm=sum(p.team);
+    const cont=(vv+fx+tm)*CONT, fee=(rev-sp)*FEE;
+    const cost=vv+fx+tm+cont+fee;
+    return {rev,vv,fx,tm,cont,fee,cost,profit:rev-cost};
+  }
+  function breakeven(d,ebShare,sgShare,reg,pe,ps,sp){
+    for(let n=1;n<=40;n++){
+      const eb=Math.round(n*ebShare), sg=Math.round(n*sgShare);
+      if(calc(d,n,eb,sg,reg,pe,ps,sp).profit>=0) return n;
+    }
+    return null;
+  }
+  function render(){
+    const p=P[dest];
+    const n=+$("n").value;
+    $("n").max=p.max;
+    ["eb","sg"].forEach(k=>{ $(k).max=n; if(+$(k).value>n) $(k).value=n; });
+    const eb=+$("eb").value, sg=+$("sg").value;
+    const reg=+$("pr").value||0, pe=+$("pe").value||0, ps=+$("ps").value||0, sp=+$("sp").value||0;
+    $("n-o").value=n; $("eb-o").value=eb; $("sg-o").value=sg;
+    const r=calc(dest,n,eb,sg,reg,pe,ps,sp);
+    $("k-rev").textContent=usd(r.rev);
+    $("k-cost").textContent=usd(r.cost);
+    const kp=$("k-profit"); kp.textContent=usd(r.profit); kp.className=r.profit>=0?"good":"bad";
+    $("k-margin").textContent=r.rev? Math.round(r.profit/r.rev*100)+"%":"—";
+    const be=breakeven(dest,n?eb/n:0,n?sg/n:0,reg,pe,ps,sp);
+    $("k-be").textContent=be? be+" inscritas":"no alcanza";
+    const tot=Math.max(r.rev,r.cost);
+    const parts=[["c-var",r.vv],["c-fix",r.fx],["c-team",r.tm],["c-cont",r.cont],["c-fee",r.fee],["c-profit",Math.max(r.profit,0)]];
+    $("bar").innerHTML=parts.map(([c,v])=>`<div class="${c}" style="width:${tot?v/tot*100:0}%"></div>`).join("");
+    $("calc-note").textContent=`${p.label}: utilidad de ${usd(n?r.profit/n:0)} por participante. `+
+      (dest==="lima"?"Capacidad máxima de una casa de uso exclusivo: 18 personas. ":"")+
+      "La contingencia (8%) cubre cambios de precio; las comisiones (4%) son de la pasarela de pago.";
+    const rows=[
+      ...p.var.map(([k,v])=>[k,"por participante × "+n,v*n]),
+      ["Suplemento habitación privada","× "+sg,p.single*sg],
+      ...p.fix.map(([k,v])=>[k,"logística fija",v]),
+      ...p.team.map(([k,v])=>[k,"equipo y marketing",v]),
+      ["Contingencia 8%","",r.cont],["Comisiones de pago 4%","",r.fee]
+    ];
+    $("breakdown").tBodies[0].innerHTML=rows.map(([k,t,v])=>`<tr><td>${k}</td><td>${t}</td><td class="num">${usd(v)}</td></tr>`).join("")+
+      `<tr><td><b>Total costos</b></td><td></td><td class="num"><b>${usd(r.cost)}</b></td></tr>`;
+  }
+  document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+    dest=b.dataset.d;
+    document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+    const pr=P[dest].price; $("pr").value=pr.reg; $("pe").value=pr.eb; $("ps").value=pr.sg;
+    if(+$("n").value>P[dest].max) $("n").value=P[dest].max;
+    render();
+  }));
+  ["n","eb","sg","pr","pe","ps","sp"].forEach(id=>$(id).addEventListener("input",render));
+  render();
+})();
+</script>
